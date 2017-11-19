@@ -1,0 +1,34 @@
+.row
+  .col-lg-12
+    %h1.page-header Create
+    .row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        New School
+      -if flash[:notice]
+        %h3.bg-success.well-sm
+        = flash[:notice]
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      .panel-body
+        .row
+          .col-lg-12
+            = form_for @school , role: "form" do |f|
+              - if @school.errors.any?
+                .row.well-sm
+                  %span.col-xs-12
+                    #error_explanation
+                      - @school.errors.full_messages.each do |msg|
+                        %h3.bg-danger.well-sm= msg
+              .form-group
+                %label Name
+                =text_field_tag :name, "", class: "form-control block", required: true , placeholder:"Enter School name"
+                %br
+                .form-group
+                  %label Address
+                  =text_area_tag :address, "", class: "form-control block" , required: true , placeholder:"Enter School Address", row:3
+              .row.well-sm
+                %span.col-xs-2
+                  %button.btn.btn-sm.btn-success{id: "create", :type => "submit"} Create
+                %span.col-xs-2
+                  %button.btn.btn-sm.btn-danger{id: "delete",:type => "submit"} Delete

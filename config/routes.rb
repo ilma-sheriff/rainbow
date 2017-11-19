@@ -1,9 +1,28 @@
 Rails.application.routes.draw do
+  resources :clocks
+  resources :schools
+
+  resources :settings
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get 'home/index' => 'home#index'
+  get 'home/flot' => 'home#flot'
+  get 'home/morris' => 'home#morris'
+  get 'home/tables' => 'home#tables'
+  get 'home/forms' => 'home#forms'
+
+  get 'home/panels_wells' => 'home#panels_wells'
+  get 'home/buttons' => 'home#buttons'
+  get 'home/notifications' => 'home#notifications'
+  get 'home/typography' => 'home#typography'
+  get 'home/grid' => 'home#grid'
+  get 'home/blank' => 'home#blank'
+  get 'home/login' => 'home#login'
+
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'schools#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
