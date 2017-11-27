@@ -3,14 +3,15 @@
 /* ------------------------------- */
 
 body {
-    background-color: #C63D0F;
+    background-color: #3c3c3c;
+    margin:0;
 }
 
-@media(min-width:768px) {
-    body {
-        padding-top: 10px;
-    }
-}
+/*@media(min-width:768px) {*/
+    /*body {*/
+        /*padding-top: 10px;*/
+    /*}*/
+/*}*/
 
 /* Wrappers */
 
@@ -26,9 +27,7 @@ body {
     background-color: #fff;
 }
 
-#page-header {
-    background-color: #DE1B1B;
-}
+
 
 @media(min-width:768px) {
     #page-wrapper {
@@ -261,35 +260,40 @@ body {
     height: 100%;
 }
 
-/* DataTables Overrides */
+/*!* DataTables Overrides *!*/
 
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc_disabled {
-    background: transparent;
-}
+/*table.dataTable thead .sorting,*/
+/*table.dataTable thead .sorting_asc,*/
+/*table.dataTable thead .sorting_desc,*/
+/*table.dataTable thead .sorting_asc_disabled,*/
+/*table.dataTable thead .sorting_desc_disabled {*/
+    /*background: transparent;*/
+/*}*/
 
-table.dataTable thead .sorting_asc:after {
-    content: "\f0de";
+/*table.dataTable thead .sorting_asc:after {*/
+    /*content: "\f0de";*/
+    /*float: right;*/
+    /*font-family: fontawesome;*/
+/*}*/
+
+/*table.dataTable thead .sorting_desc:after {*/
+    /*content: "\f0dd";*/
+    /*float: right;*/
+    /*font-family: fontawesome;*/
+/*}*/
+
+/*table.dataTable thead .sorting:after {*/
+    /*content: "\f0dc";*/
+    /*float: right;*/
+    /*font-family: fontawesome;*/
+    /*color: rgba(50,50,50,.5);*/
+/*}*/
+
+table{
+    background-color: white;
     float: right;
     font-family: fontawesome;
 }
-
-table.dataTable thead .sorting_desc:after {
-    content: "\f0dd";
-    float: right;
-    font-family: fontawesome;
-}
-
-table.dataTable thead .sorting:after {
-    content: "\f0dc";
-    float: right;
-    font-family: fontawesome;
-    color: rgba(50,50,50,.5);
-}
-
 /* Circle Buttons */
 
 .btn-circle {
@@ -331,14 +335,31 @@ table.dataTable thead .sorting:after {
     margin: 15px 0;
 }
 
+/**
+ * header Styles
+ */
+.page-header {
+    color: floralwhite;
+    /*position:fixed;*/
+    background-color: #af473c;
+    text-align: left;
+    width:100%;
+    padding: 2rem;
+    top:0px;
+}
 
 /**
  * Footer Styles
  */
 
 .footer {
-    position: absolute;
+    position:fixed;
     padding: 1rem;
-    background-color: #efefef;
-    text-align: center;
+    background-color: #af473c;
+    text-align: left;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    color: floralwhite;
 }

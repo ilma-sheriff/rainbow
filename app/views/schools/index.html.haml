@@ -1,0 +1,13 @@
+%h1{ :style => "color: white" } Listing schools
+
+%table.table.table-condensed
+  %tr
+    %th Name
+    %th Address
+    %th Actions
+
+  - @schools.each do |school|
+    %tr
+      %td= school.name
+      %td= school.address
+      %td= link_to 'Destroy', school, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -3,7 +3,6 @@ class SchoolsController < ApplicationController
 
 
   def index
-
     @schools = School.all
   end
 
@@ -25,11 +24,11 @@ class SchoolsController < ApplicationController
   # POST /clocks
   # POST /clocks.json
   def create
-    @school = School.new(:name => params[:name], :address => params[:address])
+    @school = School.new(:name => params[:name].to_s, :address => params[:address].to_s)
 
     respond_to do |format|
       if @school.save!
-        format.html {redirect_to @school, notice: 'School was successfully created.'}
+        format.html {redirect_to schools_path, notice: 'School was successfully created.'}
         format.json { render :show, status: :ok, location:  @school }
       else
         format.html { render :new }
@@ -56,6 +55,7 @@ class SchoolsController < ApplicationController
   # DELETE /schools/1
   # DELETE /schools/1.json
   def destroy
+    @school = School.find(params[:id].to_s)
     @school.destroy
     respond_to do |format|
       format.html { redirect_to school_url, notice: 'School was successfully destroyed.' }

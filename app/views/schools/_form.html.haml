@@ -1,15 +1,12 @@
 .row
   .col-lg-12
-    %h1.page-header Create
-    .row
-  .col-lg-12
     .panel.panel-default
       .panel-heading
         New School
       -if flash[:notice]
-        %h3.bg-success.well-sm
-        = flash[:notice]
         %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+        %h3.bg-success.well-sm= flash[:notice]
+        %a.alert-link{:href => "#"}
       .panel-body
         .row
           .col-lg-12
